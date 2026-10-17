@@ -20,3 +20,15 @@
 @media(max-width:950px){.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card:last-child{grid-column:1/-1;min-height:260px}}
 @media(max-width:650px){.projects-grid{grid-template-columns:1fr}.project-card,.project-card:last-child{grid-column:auto;min-height:280px}.project-kicker{margin-bottom:26px}.hero>.hero-intro>.eyebrow,.current>.eyebrow{font-size:10px}.nav-shell nav{gap:7px;flex-wrap:wrap;justify-content:flex-start}.nav-shell nav a{font-size:12px}.reach-top .eyebrow{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.project-card{transition:none}.project-card:hover{transform:none}}
+
+/* Finishing touches: subtle shapes give the projects a visual signature. */
+.project-card{position:relative;overflow:hidden;isolation:isolate}
+.project-card::before{content:"";position:absolute;top:-62px;right:-60px;width:185px;height:185px;border:1px solid rgba(87,107,73,.25);border-radius:50%;pointer-events:none;z-index:0}
+.project-card::after{content:"";position:absolute;top:8px;right:6px;width:76px;height:76px;border:1px solid rgba(87,107,73,.18);border-radius:50%;pointer-events:none;z-index:0}
+.project-card:nth-child(2)::before{border-radius:28px;transform:rotate(20deg);border-color:rgba(155,121,88,.25)}
+.project-card:nth-child(2)::after{border-radius:18px;transform:rotate(20deg);border-color:rgba(155,121,88,.18)}
+.project-card:nth-child(3)::before{border-radius:48% 10%;transform:rotate(-16deg)}
+.project-card:nth-child(3)::after{border-radius:48% 10%;transform:rotate(-16deg)}
+.project-card>*{position:relative;z-index:1}
+.project-bottom{font-size:11px}
+@media(max-width:650px){.project-card::before{width:150px;height:150px;top:-50px;right:-55px}.project-card::after{width:60px;height:60px;top:5px;right:8px}}
